@@ -1,0 +1,38 @@
+{
+  "name": "PancakeSwap Default List",
+  "timestamp": "2021-03-17T09:56:23Z",
+  "version": {
+    "major": 2,
+    "minor": 10,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://exchange.pancakeswap.finance/images/pancakeswap.png",
+  "keywords": ["pancake", "default"],
+  "tokens": [
+    {
+      "name": "token1",
+      "symbol": "token1",
+      "address": "0x2F104cb88aF971A3a2896cA51d3948748d4fF93A",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+    },
+    {
+      "name": "token2",
+      "symbol": "token2",
+      "address": "0x1dfd1E98d6f6606c28D630EFf8E4Ad9b130089f8",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+    },
+    {
+      "name": "token3",
+      "symbol": "token3",
+      "address": "0xffe5Fb72C2A19562a2dca5d394126B11157954E8",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+    }
+  ]
+}
