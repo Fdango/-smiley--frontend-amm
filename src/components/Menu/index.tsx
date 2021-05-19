@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Menu as UikitMenu} from '@pancakeswap-libs/uikit'
+import { Menu as UikitMenu} from '@xdcx/uikit-v1'
 import { useWeb3React } from '@web3-react/core'
 import { allLanguages } from 'constants/localisation/languageCodes'
 import { LanguageContext } from 'hooks/LanguageContext'
@@ -31,7 +31,7 @@ const Menu: React.FC = (props) => {
       langs={allLanguages}
       setLang={setSelectedLanguage}
       cakePriceUsd={cakePriceUsd}
-      profile={profile}
+      // profile={profile}
       {...props}
     />
   )

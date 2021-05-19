@@ -55,8 +55,6 @@ export default function Pool() {
 
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
 
-  console.log(account)
-
   return (
     <Container>
       <CardNav activeIndex={1} />
@@ -82,7 +80,7 @@ export default function Pool() {
                 />
               </RowBetween>
 
-              {account ? (
+              {!account ? (
                 <LightCard padding="40px">
                   <Text color="textDisabled" textAlign="center">
                     {TranslateString(156, 'Connect to a wallet to view your liquidity.')}
