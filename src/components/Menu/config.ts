@@ -28,12 +28,12 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: 'http://18.116.69.213/farms',
+    href: 'http://smileyswap.com/farms',
   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: 'http://18.116.69.213/pools',
+    href: 'http://smileyswap.com/pools',
   },
   
   {
@@ -42,7 +42,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Contact',
-        href: 'https://docs.pancakeswap.finance/contact-us',
+        href: 'https://smileyswap-lab.gitbook.io/smiley-swap/getting-started/how-to-get-fantom-ftm',
       },
       // {
       //   label: 'Voting',
@@ -54,11 +54,11 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://docs.pancakeswap.finance',
+        href: 'https://smileyswap-lab.gitbook.io/smiley-swap/getting-started/how-to-get-fantom-ftm',
       },
       {
         label: 'Blog',
-        href: 'https://pancakeswap.medium.com',
+        href: '',
       },
       // {
       //   label: 'Merch',
