@@ -55,7 +55,6 @@ export default function AddLiquidity({
   )
   const expertMode = useIsExpertMode()
 
-  console.log(expertMode)
   // mint state
   const { independentField, typedValue, otherTypedValue } = useMintState()
   const {

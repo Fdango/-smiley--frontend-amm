@@ -1,5 +1,5 @@
 {
-  "name": "PancakeSwap Default List",
+  "name": "SmileySwap Default List",
   "timestamp": "2021-03-17T09:56:23Z",
   "version": {
     "major": 2,
@@ -8,31 +8,55 @@
   },
   "tags": {},
   "logoURI": "https://exchange.pancakeswap.finance/images/pancakeswap.png",
-  "keywords": ["pancake", "default"],
+  "keywords": ["SmileySwap", "default"],
   "tokens": [
     {
-      "name": "token1",
-      "symbol": "token1",
-      "address": "0x2F104cb88aF971A3a2896cA51d3948748d4fF93A",
+      "name": "WFTM",
+      "symbol": "WFTM",
+      "address": "0x643d5eA9D482cFA5b56CBA63Af064569a1698a92",
       "chainId": 4002,
       "decimals": 18,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+      "logoURI": "https://www.528btc.com/d/file/2018-05-16/c986aca02304dd70bf093c2ec0ff2ca6.png"
     },
     {
-      "name": "token2",
-      "symbol": "token2",
-      "address": "0x1dfd1E98d6f6606c28D630EFf8E4Ad9b130089f8",
+      "name": "DAI",
+      "symbol": "DAI",
+      "address": "0x3a714C664D79227f70Bb696Baa5B56EB4DF8C7A7",
       "chainId": 4002,
       "decimals": 18,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+      "logoURI": "https://www.528btc.com/d/file/2018-05-16/c986aca02304dd70bf093c2ec0ff2ca6.png"
     },
     {
-      "name": "token3",
-      "symbol": "token3",
-      "address": "0xffe5Fb72C2A19562a2dca5d394126B11157954E8",
+      "name": "USDT",
+      "symbol": "USDT",
+      "address": "0x3F50080A84DfDE885Ca3348d9180D91A402EbB88",
       "chainId": 4002,
       "decimals": 18,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+      "logoURI": "https://img.528btc.com/file/2020-11-20/c949f9e138798d7841d55b531d318955.png"
+    },
+    {
+      "name": "USDC",
+      "symbol": "USDC",
+      "address": "0x17D321515D0D91Ca7eA4DD37e62C9707d23Bbc66",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png?1547042389"
+    },
+    {
+      "name": "UNI",
+      "symbol": "UNI",
+      "address": "0x7cdfb60FD99F018F3E7008717ac914E06f332c1f",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "https://img.528btc.com/file/2020-09-17/9c1532e7e4bbde8139c70e2b4c3f51ff.png"
+    },
+    {
+      "name": "BUSD",
+      "symbol": "BUSD",
+      "address": "0x3eB3F51081206AD9d1ffA6571dd8770d83d79B6f",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "https://img.528btc.com/file/2020-08-04/2cf39623c481339e816eca07f415ba07.png"
     }
   ]
 }
