@@ -37,17 +37,24 @@ export default function CurrencyLogo({
 
     if (currency instanceof Token) {
       if (currency instanceof WrappedTokenInfo) {
+        console.log(`/images/coins/${currency?.address ?? 'token'}.png`, 'toooooooken')
         return [...uriLocations, `/images/coins/${currency?.address ?? 'token'}.png`, getTokenLogoURL(currency.address)]
       }
 
+    
       return [`/images/coins/${currency?.address ?? 'token'}.png`, getTokenLogoURL(currency.address)]
     }
     return []
   }, [currency, uriLocations])
-
+  console.log(currency, 'currency')
   if (currency === ETHER) {
     return <StyledBnbLogo src="/images/coins/FTM.png" size={size} style={style} />
   }
+  
+  // if (currency === 'SMS') {
+  //   return <StyledBnbLogo src="/images/coins/sms.png" size={size} style={style} />
+  // }
+
 
   return (currency as any)?.symbol ? (
     <CoinLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />

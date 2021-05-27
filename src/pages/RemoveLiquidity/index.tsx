@@ -68,11 +68,16 @@ export default function RemoveLiquidity({
     chainId,
   ])
 
+  console.log(tokenA, 'tokenA')
+  console.log(tokenB, 'tokenB')
+  console.log(currencyA, 'currencyA')
+  console.log(currencyB, 'currencyB')
   const theme = useContext(ThemeContext)
 
   // burn state
   const { independentField, typedValue } = useBurnState()
   const { pair, parsedAmounts, error } = useDerivedBurnInfo(currencyA ?? undefined, currencyB ?? undefined)
+  console.log(pair , 'pair')
   const { onUserInput: _onUserInput } = useBurnActionHandlers()
   const isValid = !error
 
@@ -102,9 +107,10 @@ export default function RemoveLiquidity({
 
   const atMaxAmount = parsedAmounts[Field.LIQUIDITY_PERCENT]?.equalTo(new Percent('1'))
 
+  console.log(pair?.liquidityToken?.address, 'pair?.liquidityToken?.address')
   // pair contract
   const pairContract: Contract | null = usePairContract(pair?.liquidityToken?.address)
-
+  console.log(pairContract, 'pairContract')
   // allowance handling
   const [signatureData, setSignatureData] = useState<{ v: number; r: string; s: string; deadline: number } | null>(null)
   const [approval, approveCallback] = useApproveCallback(parsedAmounts[Field.LIQUIDITY], ROUTER_ADDRESS)
@@ -124,7 +130,7 @@ export default function RemoveLiquidity({
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'Uniswap V2',
+      name: 'Smileswap V2',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -153,10 +159,13 @@ export default function RemoveLiquidity({
       message,
     })
 
+    console.log(data, 'eth_signTypedData_v4')
+    console.log([account, data], '[account, data]')
     library
       .send('eth_signTypedData_v4', [account, data])
       .then(splitSignature)
       .then((signature) => {
+        console.log(signature, 'signature')
         setSignatureData({
           v: signature.v,
           r: signature.r,
@@ -213,6 +222,10 @@ export default function RemoveLiquidity({
     let methodNames: string[]
     let args: Array<string | string[] | number | boolean>
     // we have approval, use normal remove liquidity
+    console.log(router, 'router')
+    console.log(approval, 'approval')
+    console.log( ApprovalState.APPROVED, ' ApprovalState.APPROVED')
+    console.log( signatureData, ' signatureData')
     if (approval === ApprovalState.APPROVED) {
       // removeLiquidityETH
       if (oneCurrencyIsETH) {
@@ -243,6 +256,7 @@ export default function RemoveLiquidity({
     // we have a signataure, use permit versions of remove liquidity
     else if (signatureData !== null) {
       // removeLiquidityETHWithPermit
+      console.log(oneCurrencyIsETH, 'oneCurrencyIsETH')
       if (oneCurrencyIsETH) {
         methodNames = ['removeLiquidityETHWithPermit', 'removeLiquidityETHWithPermitSupportingFeeOnTransferTokens']
         args = [
@@ -275,9 +289,14 @@ export default function RemoveLiquidity({
           signatureData.s,
         ]
       }
+
+      console.log(JSON.stringify(args), 'args')
     } else {
       throw new Error('Attempting to confirm without approval or a signature. Please contact support.')
     }
+
+    console.log(methodNames, 'methodNames')
+    console.log(args, 'methodNames---args')
     const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
       methodNames.map((methodName, index) =>
         router.estimateGas[methodName](...args)
@@ -289,10 +308,13 @@ export default function RemoveLiquidity({
       )
     )
 
+
+    console.log(safeGasEstimates, 'safeGasEstimates')
     const indexOfSuccessfulEstimation = safeGasEstimates.findIndex((safeGasEstimate) =>
       BigNumber.isBigNumber(safeGasEstimate)
     )
 
+    console.log(indexOfSuccessfulEstimation, 'indexOfSuccessfulEstimation')
     // all estimations failed...
     if (indexOfSuccessfulEstimation === -1) {
       console.error('This transaction would fail. Please contact support.')
@@ -306,7 +328,7 @@ export default function RemoveLiquidity({
       })
         .then((response: TransactionResponse) => {
           setAttemptingTxn(false)
-
+          console.log(response, 'response')
           addTransaction(response, {
             summary: `Remove ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${
               currencyA?.symbol

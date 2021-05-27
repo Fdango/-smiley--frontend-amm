@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'http://18.116.69.213/',
+    href: 'http://smileyswap.com/',
   },
   {
     label: 'Trade',
@@ -41,29 +41,21 @@ const config: MenuEntry[] = [
     icon: 'MoreIcon',
     items: [
       {
-        label: 'Contact',
-        href: 'https://smileyswap-lab.gitbook.io/smiley-swap/getting-started/how-to-get-fantom-ftm',
-      },
-      // {
-      //   label: 'Voting',
-      //   href: 'https://voting.pancakeswap.finance',
-      // },
-      {
-        label: 'Github',
-        href: 'https://github.com/Smileyswap',
+        label: "Contact",
+        href: "https://smileyswap-lab.gitbook.io/smiley-swap/",
       },
       {
-        label: 'Docs',
-        href: 'https://smileyswap-lab.gitbook.io/smiley-swap/getting-started/how-to-get-fantom-ftm',
+        label: "Github",
+        href: "https://github.com/pancakeswap",
       },
       {
-        label: 'Blog',
-        href: '',
+        label: "Docs",
+        href: "https://smileyswap-lab.gitbook.io/smiley-swap/",
       },
-      // {
-      //   label: 'Merch',
-      //   href: 'https://pancakeswap.creator-spring.com/',
-      // },
+      {
+        label: "Bridge",
+        href: "https://smileyswap-lab.gitbook.io/smiley-swap/getting-started/contract-addresses",
+      },
     ],
   },
 ]

@@ -11,6 +11,14 @@
   "keywords": ["SmileySwap", "default"],
   "tokens": [
     {
+      "name": "SMS",
+      "symbol": "SMS",
+      "address": "0xe536dD58f1C221395b7C6ecD6643398e7aaD64E1",
+      "chainId": 4002,
+      "decimals": 18,
+      "logoURI": "/public/images/sms.png"
+    },
+    {
       "name": "WFTM",
       "symbol": "WFTM",
       "address": "0x643d5eA9D482cFA5b56CBA63Af064569a1698a92",
